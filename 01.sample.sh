@@ -1,3 +1,5 @@
 #!/bin/bash
+pwd
 ls -ltrh
-datetimectl
+date
+echo "Hellow"
