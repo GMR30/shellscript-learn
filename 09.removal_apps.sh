@@ -20,8 +20,8 @@ validate(){
     echo -e  "$2 ..is $G SUCCESS $N "
    fi
           }
-yum remove git -y &>>$Log_File
-validate $? "GIT is UN-Installation "
+#yum remove git -y &>>$Log_File
+#validate $? "GIT is UN-Installation "
 
 yum remove java -y &>>$Log_File
 validate $? "JAVA UN-Installation"
