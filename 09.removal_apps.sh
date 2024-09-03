@@ -31,5 +31,5 @@ validate $? "NET-TOOLS UN-Installation"
 
 yum remove wget -y &>>$Log_File
 validate $? "WGET UN-Installation"
-yum remove lvm -y &>>$Log_File
+yum remove lvm2 -y &>>$Log_File
 validate $? "lvm UN-Installation"
