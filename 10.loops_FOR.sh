@@ -22,7 +22,7 @@ validate(){
 
 for req_package in $@  #required packages you can to the input
 do
-  echo req_package
+  echo "$req_package"
   yum install $req_package -y &>>$Log_File
   validate $? "$req_package installation"
 done
