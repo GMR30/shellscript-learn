@@ -20,9 +20,9 @@ validate(){
    fi
           }
 
-for reqq_package in $@  #required packages you can to the input
-echo reqq_package
+for req_package in $@  #required packages you can to the input
 do
-  yum install $reqq_package &>>$Log_File
-  validate $? "$reqq_package installation"
+  echo req_package
+  yum install $req_package &>>$Log_File
+  validate $? "$req_package installation"
 done
