@@ -19,10 +19,10 @@ validate(){
     echo -e  "$2 ..is $G SUCCESS $N "
    fi
           }
-
+req_package = $()
 for req_package in $@  #required packages you can to the input
 do
   echo req_package
-  yum install $req_package &>>$Log_File
+  yum install $req_package -y &>>$Log_File
   validate $? "$req_package installation"
 done
