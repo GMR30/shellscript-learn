@@ -19,9 +19,10 @@ validate(){
     echo -e  "$2 ..is $G SUCCESS $N "
    fi
           }
-echo Package
-for Package in $@  #required packages you can to the input
+
+for reqq_package in $@  #required packages you can to the input
+echo reqq_package
 do
-  yum install $Package &>>$Log_File
-  validate $? "$Package installation"
+  yum install $reqq_package &>>$Log_File
+  validate $? "$reqq_package installation"
 done
