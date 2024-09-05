@@ -22,6 +22,6 @@ validate(){
 
 for Package in $@  #required packages you can to the input
  do
-  yum remove $Package &>>$Log_File
+  yum remove $Package -y &>>$Log_File
   validate $? "$Package removed successfully"
  done
