@@ -19,7 +19,8 @@ validate(){
     echo -e  "$2 ..is $G SUCCESS $N "
    fi
           }
-yum list installed
+#yum list installed
+rpm -qa
 for Package in $@  #required packages you can to the input
  do
   yum remove $Package &>>$Log_File
