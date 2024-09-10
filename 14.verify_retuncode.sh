@@ -17,26 +17,29 @@ Y="\e[33m"
 echo "$1"
 echo "$2"
 echo "$3"
-##Function-1
-validate(){
-   if [ $1 -ne 0 ]
-      then
-        echo -e "$2 ..is $R FAILED $N  "
-        exit 127
-      else
-        echo -e  "$2 ..is $G SUCCESS $N "
-   fi
-## Function-2          }
-check_installed(){
-  is_installed=10
-  yum -q list installed $Package &>/dev/nell
-  if [ $? -eq 0 ]
-  then
-    is_installed=20
-  fi
-  return $is_installed
 
-}
+validate()
+         {
+            if [ $1 -ne 0 ]
+            then
+            echo -e "$2 ..is $R FAILED $N  "
+            exit 127
+            else
+            echo -e  "$2 ..is $G SUCCESS $N "
+            fi
+         }
+
+check_installed()
+        {
+            is_installed=10
+            yum -q list installed $Package &>/dev/nell
+            if [ $? -eq 0 ]
+            then
+            is_installed=20
+            fi
+            return $is_installed
+
+        }
 for Package in $@  #required packages you can to the input
   do
     check_installed $Package
