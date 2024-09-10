@@ -39,15 +39,15 @@ check_installed(){
 }
 for Package in $@  #required packages you can to the input
   do
-        check_installed $Package
-        return_value=$?
-        echo "return value from function: $return_value"
-        if [ $return_value -ne 20 ]
-          then
-             echo -e "$Package $R NOT INSTALLED $N  "
-             yum install $Package -y &>>$Log_File
-             validate $? "$Package installation"
-          else
-             echo -e  "$Package $Y INSTALLED already $N "
-        fi
+    check_installed $Package
+    return_value=$?
+    echo "return value from function: $return_value"
+    if [ $return_value -ne 20 ]
+    then
+        echo -e "$Package $R NOT INSTALLED $N  "
+        yum install $Package -y &>>$Log_File
+        validate $? "$Package installation"
+    else
+        echo -e  "$Package $Y INSTALLED already $N "
+    fi
   done
