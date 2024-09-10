@@ -7,11 +7,11 @@ G="\e[32m"
 N="\e[0m"
 Y="\e[33m"
 #To check user is root or not
-if [ $userid -ne 0 ]
-then
-   echo "You are not root user,please run the script with root user"
-   exit 127
-fi
+    if [ $userid -ne 0 ]
+    then
+         echo "You are not root user,please run the script with root user"
+         exit 127
+    fi
 
 #this is generic we need to pass the arguments.
 echo "$1"
