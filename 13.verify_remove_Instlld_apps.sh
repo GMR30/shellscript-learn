@@ -9,14 +9,14 @@ Y="\e[33m"
 
 ## TO CHECK THE USER HAS ROOT PERMISSIONS ARE NOT
 
-if [$userId -ne 0]
+if [ $userId -ne 0 ]
   then
     echo -e " $R As we verified you are not the root user,please login as root user to run the script $N"
     exit 127
 fi
 validate()
 {
-  if [$1 -ne 0]
+  if [ $1 -ne 0 ]
   then echo -e "$2 ...is $R APP INSTALLATION FAILED $N"
   exit 127
   else
@@ -27,7 +27,7 @@ validate()
 for application_name in $@
 do
   yum -q list installed $application_name &>/dev/null
-  if[$? -eq 0]
+  if[ $? -eq 0 ]
   then
     echo -e " $application_name $R  application is already installed $N"
     yum remove $application_name -y &>>log_file
