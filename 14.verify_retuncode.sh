@@ -50,4 +50,4 @@ for Package in $@  #required packages you can to the input
           else
              echo -e  "$Package $Y INSTALLED already $N "
         fi
-done
+  done
