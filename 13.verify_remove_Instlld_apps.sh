@@ -1,7 +1,7 @@
 #!/bin/bash
 userId=$(id -u)
 Date=$(date +"%F-%H-%M-%S")
-log_file="$Date.log"
+Log_File="$Date.log"
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
@@ -31,7 +31,7 @@ do
   if [ $? -eq 0 ]
   then
         echo -e " $application_name $R  application is already installed $N"
-        yum remove $application_name -y &>>log_file
+        yum remove $application_name -y &>>Log_File
         validate $? "$application_name UN-INSTALLATION"
     else
         echo -e "$application_name $Y is UN-INSTALLED already $N"
