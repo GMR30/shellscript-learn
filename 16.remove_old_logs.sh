@@ -6,7 +6,7 @@ R="\e[31m"
 G="\e[32m"
 N="\e[0m"
 Y="\e[33m"
-Input=$(find /home/centos/shellscript-learn  -name  "*.log" -type f -mtime +1)
+Input=$(find /home/centos/shellscript-learn  -name  "*.log" -type f )
 echo -e "$G output is$N :${Input}" &>>$Log_File
 while IFS= read line;
 do
