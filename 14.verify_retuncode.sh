@@ -14,9 +14,9 @@ Y="\e[33m"
     fi
 
 #this is generic we need to pass the arguments.
-echo "$1"
-echo "$2"
-echo "$3"
+echo "The value in first parameter:$1"
+echo "The value in second parameter:$2"
+echo "The value in third parameter:$3"
 
 validate()
          {
