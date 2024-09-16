@@ -21,5 +21,5 @@ do
   fi
 done <<<"$cpu_usage"
 echo "message:$message"
-echo -e "$message" | mail -s "High cpu usage" gmr@subbannadairy.store
+echo -e "$message" | mail -s "High cpu usage" raj@subbannadairy.store
 
