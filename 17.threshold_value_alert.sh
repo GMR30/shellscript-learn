@@ -19,3 +19,4 @@ do
 done <<<"$Disk_usage"
 echo "message:$message"
 echo -e "$message" | mail -s "High Disk usage" raj@subbannadairy.com
+echo -e "$message" | mail -s "High Disk usage" devarapalli.mrudulareddy@gmail.com
