@@ -1,0 +1,11 @@
+#!/bin/bash
+To=$1
+Subject=$2
+body_content=$3
+Name=$4
+alert_type=$2
+template="/home/centos/shellscript-learn/template.html"
+
+final_content=$(sed -e "s/Team/$Name/g" -e "s/body_content/$body_content/g" -e "s/alert_type/$alert_type" "$template")
+
+echo "final_content: $final_content"
