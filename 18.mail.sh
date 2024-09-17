@@ -11,4 +11,4 @@ final_content=$(sed -e "s/Team/$Name/g" -e "s/body_content/$body_content/g" -e "
 
 echo "final_content: $final_content"
 
-echo "$final_content" | mail -s "$Subject" "$To"
+echo "$final_content" | mail -s $(echo  -e "$Subject\nContent-type: text/html")" "$To"
