@@ -19,5 +19,5 @@ do
 done <<<"$Disk_usage"
 echo "message:$message"
 echo "$message" | mail -s "High Disk usage" raj@subbannadairy.store
+
 sh 18.mail.sh raj@subbannadairy.store "High Disk usage" "message" "Linux Team"
-#echo -e "$message" | mail -s "High Disk usage" devarapalli.mrudulareddy@gmail.com
