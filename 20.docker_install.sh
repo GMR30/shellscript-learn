@@ -39,3 +39,5 @@ fi
  systemctl start docker     &>>$Log_File
  systemctl enable docker    &>>$Log_File
  echo -e "$G  start and enabling  a docker service is done successfully $N"
+ usermod -aG docker centos
+ echo -e "$G  docker engine is installed  successfully, you can logout and login  $N"
