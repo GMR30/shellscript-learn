@@ -25,17 +25,17 @@ then
 fi
  echo -e "$G Installing yum utils package $N"
  yum install -y yum-utils &>>$Log_File
- echo -e "$G  yum utils package Installed successfully $N"
+ echo -e "$G  yum utils package Installed Successfully $N"
 
  echo -e "$R Downloading the docker to the repos list $N"
  yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo  &>>$Log_File
- echo -e "$G  docker to the repos list updated  successfully $N"
+ echo -e "$G  docker to the repos list updated  Successfully $N"
 
  echo -e "$R Installing docker  package $N"
  yum install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin  &>>$Log_File
- echo -e "$G  docker  package installed successfully $N"
+ echo -e "$G  docker  package installed Successfully $N"
 
- echo -e "$G start and enabling  a docker service $N"
+ echo -e "$R start and enabling  a docker Service $N"
  systemctl start docker     &>>$Log_File
  systemctl enable docker    &>>$Log_File
  echo -e "$G  start and enabling  a docker service is done successfully $N"
