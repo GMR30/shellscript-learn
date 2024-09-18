@@ -23,9 +23,19 @@ then
    echo "You are not root user,please run the script with root user"
    exit 127
 fi
-
+ echo -e "$G Installing yum utils package $N"
  yum install -y yum-utils
+ echo -e "$G  yum utils package Installed successfully $N"
+
+ echo -e "$R downloading the docker to the repos list $N"
  yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+ echo -e "$G  docker to the repos list updated  successfully $N"
+
+ echo -e "$R Installing docker  package $N"
  yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+ echo -e "$G  docker  package installed successfully $N"
+
+ echo -e "$G start and enabling  a docker service $N"
  systemctl start docker
  systemctl enable docker
+ echo -e "$G  start and enabling  a docker service is done successfully $N"
