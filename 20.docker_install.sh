@@ -1,7 +1,7 @@
 #!/bin/bash
 userid=$(id -u)
-#Date=$(date +"%F-%H-%M-%S")
-#Log_File="$Date.log"
+Date=$(date +"%F-%H-%M-%S")
+Log_File="$Date.docker-log-file.log"
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
@@ -24,18 +24,18 @@ then
    exit 127
 fi
  echo -e "$G Installing yum utils package $N"
- yum install -y yum-utils
+ yum install -y yum-utils &>>$Log_File
  echo -e "$G  yum utils package Installed successfully $N"
 
- echo -e "$R downloading the docker to the repos list $N"
- yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+ echo -e "$R Downloading the docker to the repos list $N"
+ yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo  &>>$Log_File
  echo -e "$G  docker to the repos list updated  successfully $N"
 
  echo -e "$R Installing docker  package $N"
- yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+ yum install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin  &>>$Log_File
  echo -e "$G  docker  package installed successfully $N"
 
  echo -e "$G start and enabling  a docker service $N"
- systemctl start docker
- systemctl enable docker
+ systemctl start docker     &>>$Log_File
+ systemctl enable docker    &>>$Log_File
  echo -e "$G  start and enabling  a docker service is done successfully $N"
